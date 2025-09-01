@@ -1,5 +1,5 @@
-body { font-family: system-ui, sans-serif; padding: 2rem; }
-.box {
-  width: 80px; height: 80px;
-  background: black; border-radius: 12px;
+#animation .text-xl {
+  font-size: 1.5rem;
+  color: currentColor;
+  letter-spacing: 0.06em;
 }
