@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - KINU Creative Studio</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../" class="brand-link">KINU</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../welcome/" class="nav-link">Welcome</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link active">Portfolio</a></li>
+                    <li class="nav-item"><a href="../about/" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="../contact/" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="page-title">
+                    <span class="title-line">Creative</span>
+                    <span class="title-line highlight">Portfolio</span>
+                </h1>
+                <p class="hero-description">
+                    これまでに手がけた作品の数々をご覧ください<br>
+                    デジタルアートから映像制作まで、多様なクリエイティブワーク
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Navigation -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-nav">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="digital-art">Digital Art</button>
+                <button class="filter-btn" data-filter="web-design">Web Design</button>
+                <button class="filter-btn" data-filter="multimedia">Multimedia</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Featured KINU Collection -->
+                <div class="portfolio-item featured" data-category="digital-art multimedia">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder kinu-collection">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🎨</div>
+                                <h3>KINU Collection</h3>
+                                <p>Digital Art Series</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Featured Project</span>
+                        <h3>KINU Creative Collection</h3>
+                        <p>音楽、映像、デジタルアートを融合した革新的なマルチメディア作品シリーズ</p>
+                        <a href="KINU/" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <!-- Other Portfolio Items -->
+                <div class="portfolio-item" data-category="web-design">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder web-project">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🌐</div>
+                                <h3>Modern Web</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Web Design</span>
+                        <h3>Corporate Website Redesign</h3>
+                        <p>モダンなデザインと優れたUXを実現したコーポレートサイト</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="digital-art">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder digital-art">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🎭</div>
+                                <h3>Abstract Dreams</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Digital Art</span>
+                        <h3>Abstract Dreams Series</h3>
+                        <p>夢と現実の境界を表現した抽象的デジタルアート作品</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder branding">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🏷️</div>
+                                <h3>Brand Identity</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Branding</span>
+                        <h3>Startup Brand Identity</h3>
+                        <p>革新的なスタートアップのための包括的ブランドアイデンティティ</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="multimedia">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder multimedia">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🎬</div>
+                                <h3>Motion Graphics</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Multimedia</span>
+                        <h3>Promotional Video Campaign</h3>
+                        <p>ブランドストーリーを伝える動的なモーショングラフィックス</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web-design digital-art">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder interactive">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">✨</div>
+                                <h3>Interactive Art</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Interactive Design</span>
+                        <h3>Interactive Art Installation</h3>
+                        <p>観客の動きに反応するインタラクティブなデジタルアート</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="branding web-design">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder ecommerce">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🛍️</div>
+                                <h3>E-commerce</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">E-commerce</span>
+                        <h3>Luxury Fashion Platform</h3>
+                        <p>高級ファッションブランドのためのオンラインプラットフォーム</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="multimedia digital-art">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder vr-experience">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🥽</div>
+                                <h3>VR Experience</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">VR/AR</span>
+                        <h3>Virtual Reality Experience</h3>
+                        <p>没入感のあるバーチャルリアリティ体験設計</p>
+                        <a href="#" class="portfolio-link">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn btn-secondary load-more-btn">もっと見る</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>あなたのプロジェクトを始めませんか？</h2>
+                <p>私たちの作品をご覧いただき、ありがとうございます。<br>
+                あなたのアイデアを形にするお手伝いをさせてください。</p>
+                <div class="cta-buttons">
+                    <a href="../contact/" class="btn btn-primary">お問い合わせ</a>
+                    <a href="../about/" class="btn btn-secondary">料金について</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>KINU Creative Studio</h3>
+                    <p>創造性に限界はありません</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="../">Home</a></li>
+                            <li><a href="../welcome/">Welcome</a></li>
+                            <li><a href="../about/">About</a></li>
+                            <li><a href="../contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="../legal/">利用規約</a></li>
+                            <li><a href="../legal/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KINU Creative Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active filter button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    const categories = item.getAttribute('data-category');
+                    
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.add('show');
+                        }, 100);
+                    } else if (categories.includes(filter)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.add('show');
+                        }, 100);
+                    } else {
+                        item.classList.remove('show');
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Load more functionality
+        let visibleItems = 6;
+        const allItems = document.querySelectorAll('.portfolio-item');
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+
+        // Initially show only first 6 items
+        allItems.forEach((item, index) => {
+            if (index >= visibleItems) {
+                item.style.display = 'none';
+            }
+        });
+
+        loadMoreBtn.addEventListener('click', () => {
+            const hiddenItems = document.querySelectorAll('.portfolio-item[style*="display: none"]');
+            const itemsToShow = Array.from(hiddenItems).slice(0, 3);
+
+            itemsToShow.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.display = 'block';
+                    item.classList.add('show');
+                }, index * 100);
+            });
+
+            visibleItems += 3;
+
+            // Hide button if all items are visible
+            if (visibleItems >= allItems.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+
+        // Portfolio item hover effects
+        portfolioItems.forEach(item => {
+            const image = item.querySelector('.portfolio-image');
+            const content = item.querySelector('.portfolio-content');
+
+            item.addEventListener('mouseenter', () => {
+                image.style.transform = 'scale(1.05)';
+                content.style.transform = 'translateY(-5px)';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                image.style.transform = 'scale(1)';
+                content.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const portfolioObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        portfolioItems.forEach(item => {
+            portfolioObserver.observe(item);
+        });
+    </script>
+
+    <style>
+        /* Portfolio Page Specific Styles */
+        .portfolio-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(
