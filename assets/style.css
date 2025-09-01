@@ -1,5 +1,0 @@
-#animation .text-xl {
-  font-size: 1.5rem;
-  color: currentColor;
-  letter-spacing: 0.06em;
-}
