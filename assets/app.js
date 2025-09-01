@@ -1,17 +1,20 @@
-// UMD 読み込み時はグローバルの `anime` が使えます
-// エラーチェック（存在確認）
-if (typeof anime !== "function") {
-  console.error("anime.js が読み込めていません。CDNパスや通信を確認してください。");
-} else {
-  // 基本アニメーション
-  anime({
-    targets: ".box",
-    translateX: 300,
-    rotate: "1turn",
-    background: "#4caf50",
-    duration: 1500,
-    easing: "easeInOutQuad",
-    direction: "alternate",
-    loop: true
-  });
-}
+import { animate, stagger, text } from 'animejs';
+
+const { chars } = text.split('h2', { words: false, chars: true });
+
+animate(chars, {
+  // Property keyframes
+  y: [
+    { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+  ],
+  // Property specific parameters
+  rotate: {
+    from: '-1turn',
+    delay: 0
+  },
+  delay: stagger(50),
+  ease: 'inOutCirc',
+  loopDelay: 1000,
+  loop: true
+});
