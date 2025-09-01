@@ -1,0 +1,5 @@
+body { font-family: system-ui, sans-serif; padding: 2rem; }
+.box {
+  width: 80px; height: 80px;
+  background: black; border-radius: 12px;
+}
