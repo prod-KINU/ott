@@ -1,11 +1,19 @@
-<div class="hero">
-  <img src="./assets/hero1.jpg" class="f i1" alt="">
-  <img src="./assets/hero2.jpg" class="f i2" alt="">
-  <img src="./assets/hero3.jpg" class="f i3" alt="">
-</div>
+<section class="panel" data-color="#111111">...</section>
+<section class="panel" data-color="#0047AB">...</section>
+<section class="panel" data-color="#E63946">...</section>
+
 <style>
-.hero{position:relative;aspect-ratio:16/9;overflow:hidden}
-.hero .f{position:absolute;inset:0;object-fit:cover;opacity:0;animation:fade 12s infinite}
-.hero .i1{animation-delay:0s}.i2{animation-delay:4s}.i3{animation-delay:8s}
-@keyframes fade{0%,8%{opacity:0} 10%,30%{opacity:1} 38%,100%{opacity:0}}
+:root{ --bg: #ffffff }
+body{ background: var(--bg); transition: background-color .45s ease }
+.panel{ min-height: 100vh; padding: 10vh 8vw }
 </style>
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.documentElement.style.setProperty('--bg', e.target.dataset.color);
+    }
+  });
+},{ threshold: 0.6 });
+document.querySelectorAll('.panel').forEach(p=>io.observe(p));
+</script>
