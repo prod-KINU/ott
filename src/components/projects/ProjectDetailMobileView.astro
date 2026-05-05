@@ -1,0 +1,78 @@
+---
+import type { ProjectItem } from '@data/projects';
+import { dictionary } from '@i18n/index';
+import ProjectDetailPanel from './ProjectDetailPanel.astro';
+
+type Props = {
+  projects: ProjectItem[];
+};
+
+const { projects } = Astro.props;
+---
+
+<aside class="project-mobile-view" data-project-mobile-view aria-modal="true" aria-label="project detail" hidden>
+  <div class="project-mobile-view__bar">
+    <button class="project-mobile-view__back" type="button" data-project-back>
+      <span data-lang="jp">{dictionary.jp.common.back}</span>
+      <span data-lang="en">{dictionary.en.common.back}</span>
+    </button>
+  </div>
+  <div class="project-mobile-view__content">
+    <ProjectDetailPanel projects={projects} />
+  </div>
+</aside>
+
+<style>
+  .project-mobile-view {
+    position: fixed;
+    inset: 0;
+    z-index: 140;
+    overflow: auto;
+    background: var(--color-canvas);
+    transform: translateX(100%);
+    transition: transform 220ms ease;
+  }
+
+  .project-mobile-view.is-open {
+    transform: translateX(0);
+  }
+
+  .project-mobile-view__bar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding-inline: var(--page-x);
+    background: var(--color-canvas);
+    border-bottom: 1px solid var(--color-steel);
+  }
+
+  .project-mobile-view__back {
+    min-height: 42px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-electric-blue);
+    cursor: pointer;
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .project-mobile-view__content {
+    padding: var(--spacing-22) var(--page-x) var(--spacing-66);
+  }
+
+  @media (min-width: 861px) {
+    .project-mobile-view {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-mobile-view {
+      transition: none;
+    }
+  }
+</style>

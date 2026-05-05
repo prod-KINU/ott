@@ -1,0 +1,34 @@
+---
+import { dictionary } from '@i18n/index';
+
+type Props = {
+  href?: string;
+};
+
+const { href } = Astro.props;
+---
+
+{
+  href && (
+    <a class="project-link" href={href} target="_blank" rel="noreferrer">
+      <span data-lang="jp">{dictionary.jp.common.openProject}</span>
+      <span data-lang="en">{dictionary.en.common.openProject}</span>
+    </a>
+  )
+}
+
+<style>
+  .project-link {
+    width: fit-content;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-electric-blue);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .project-link:hover {
+    color: var(--color-ink);
+  }
+</style>
