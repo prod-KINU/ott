@@ -1,0 +1,56 @@
+---
+import { media } from '@data/media';
+import { dictionary } from '@i18n/index';
+---
+
+<div class="loading-overlay" data-loading-overlay data-images={JSON.stringify(media.loading)} aria-live="polite">
+  <div class="loading-overlay__content">
+    <img class="loading-overlay__image" data-loading-image src={media.loading[0]} alt="" width="180" height="180" />
+    <p class="loading-overlay__label text-caption">
+      <span data-lang="jp">{dictionary.jp.loading.label}</span>
+      <span data-lang="en">{dictionary.en.loading.label}</span>
+    </p>
+  </div>
+</div>
+
+<style>
+  .loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    transition: opacity 180ms linear, visibility 180ms linear;
+  }
+
+  .loading-overlay.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .loading-overlay__content {
+    display: grid;
+    place-items: center;
+    gap: var(--spacing-15);
+  }
+
+  .loading-overlay__image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+
+  .loading-overlay__label {
+    margin: 0;
+    color: var(--color-smoke);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loading-overlay {
+      transition: none;
+    }
+  }
+</style>

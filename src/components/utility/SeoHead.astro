@@ -1,0 +1,20 @@
+---
+import { site } from '@data/site';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description = site.description.jp } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : site.name;
+---
+
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f6f8f7" />
+<link rel="icon" href="/favicon/site.svg" type="image/svg+xml" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
