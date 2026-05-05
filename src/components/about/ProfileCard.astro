@@ -1,0 +1,78 @@
+---
+import type { ProfileItem } from '@data/profiles';
+import { withBase } from '@utils/paths';
+
+type Props = {
+  profile: ProfileItem;
+};
+
+const { profile } = Astro.props;
+---
+
+<article class="profile-card">
+  <img class="profile-card__image" src={withBase(profile.image)} alt={profile.alt.jp} width="900" height="900" data-alt-jp={profile.alt.jp} data-alt-en={profile.alt.en} />
+  <div class="profile-card__body">
+    <p class="profile-card__role text-caption">
+      <span data-lang="jp">{profile.role.jp}</span>
+      <span data-lang="en">{profile.role.en}</span>
+    </p>
+    <h2 class="profile-card__name">{profile.name}</h2>
+    <p class="profile-card__bio" data-lang="jp">{profile.bio.jp}</p>
+    <p class="profile-card__bio" data-lang="en">{profile.bio.en}</p>
+  </div>
+</article>
+
+<style>
+  .profile-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(280px, 1.15fr);
+    gap: var(--spacing-33);
+    align-items: start;
+    padding-block: var(--spacing-33);
+    border-top: 1px solid var(--color-steel);
+  }
+
+  .profile-card:last-child {
+    border-bottom: 1px solid var(--color-steel);
+  }
+
+  .profile-card__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid var(--color-steel);
+  }
+
+  .profile-card__body {
+    display: grid;
+    gap: var(--spacing-15);
+  }
+
+  .profile-card__role,
+  .profile-card__bio {
+    margin: 0;
+  }
+
+  .profile-card__role {
+    color: var(--color-smoke);
+  }
+
+  .profile-card__name {
+    margin: 0;
+    font-family: var(--font-te-40);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-thin);
+    line-height: var(--leading-display);
+  }
+
+  .profile-card__bio {
+    max-width: 34em;
+  }
+
+  @media (max-width: 720px) {
+    .profile-card {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-22);
+    }
+  }
+</style>

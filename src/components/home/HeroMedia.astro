@@ -1,0 +1,31 @@
+---
+import { media } from '@data/media';
+import { withBase } from '@utils/paths';
+
+const hero = media.homeHero;
+---
+
+<figure class="hero-media">
+  {
+    hero.type === 'image' && (
+      <img src={withBase(hero.src)} alt={hero.alt.jp} width="1200" height="900" data-alt-jp={hero.alt.jp} data-alt-en={hero.alt.en} />
+    )
+  }
+</figure>
+
+<style>
+  .hero-media {
+    margin: 0;
+    min-height: 0;
+    border: 1px solid var(--color-steel);
+    background: var(--color-steel);
+  }
+
+  .hero-media img,
+  .hero-media video {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+  }
+</style>

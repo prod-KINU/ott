@@ -1,0 +1,54 @@
+---
+import type { ProjectItem } from '@data/projects';
+import { dictionary } from '@i18n/index';
+
+type Props = {
+  project: ProjectItem;
+};
+
+const { project } = Astro.props;
+---
+
+<dl class="project-meta">
+  <div class="project-meta__row">
+    <dt>{dictionary.jp.projects.meta.date}</dt>
+    <dd>{project.date}</dd>
+  </div>
+  <div class="project-meta__row">
+    <dt>{dictionary.jp.projects.meta.client}</dt>
+    <dd>{project.client}</dd>
+  </div>
+  <div class="project-meta__row">
+    <dt>{dictionary.jp.projects.meta.category}</dt>
+    <dd>
+      <span data-lang="jp">{project.category.jp}</span>
+      <span data-lang="en">{project.category.en}</span>
+    </dd>
+  </div>
+</dl>
+
+<style>
+  .project-meta {
+    margin: 0;
+    display: grid;
+    border-top: 1px solid var(--color-steel);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .project-meta__row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: var(--spacing-15);
+    padding-block: 10px;
+    border-bottom: 1px solid var(--color-steel);
+  }
+
+  .project-meta dt {
+    color: var(--color-smoke);
+  }
+
+  .project-meta dd {
+    margin: 0;
+  }
+</style>
