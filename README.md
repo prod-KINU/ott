@@ -1,4 +1,5 @@
 # KINU Portfolio 編集プロトコル
+> To oike (from teramachi)
 
 このドキュメントは、KINUメンバーがテキスト、画像、作品情報を更新するための共有メモです。  
 基本的に `dist/` や `node_modules/` は編集しません。編集するのは `src/` と `public/` 配下です。
