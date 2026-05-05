@@ -1,0 +1,148 @@
+---
+import { profiles } from '@data/profiles';
+import { dictionary } from '@i18n/index';
+import ProfileCard from './ProfileCard.astro';
+---
+
+<section class="profile-section page-frame page-section" aria-labelledby="about-title">
+  <div class="profile-section__intro">
+    <h1 id="about-title" class="profile-section__title">
+      <span data-lang="jp">{dictionary.jp.about.title}</span>
+      <span data-lang="en">{dictionary.en.about.title}</span>
+    </h1>
+    <span class="profile-section__rule" aria-hidden="true"></span>
+    <p data-lang="jp">{dictionary.jp.about.intro}</p>
+    <p data-lang="en">{dictionary.en.about.intro}</p>
+  </div>
+  <div class="profile-section__list">
+    {profiles.map((profile) => <ProfileCard profile={profile} />)}
+  </div>
+  <aside class="profile-section__contact">
+    <span class="profile-section__mark" aria-hidden="true"></span>
+    <p data-lang="jp">{dictionary.jp.about.collaboration}</p>
+    <p data-lang="en">{dictionary.en.about.collaboration}</p>
+    <a href="mailto:contact@example.com">
+      <span data-lang="jp">{dictionary.jp.about.contact}</span>
+      <span data-lang="en">{dictionary.en.about.contact}</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </aside>
+</section>
+
+<style>
+  .profile-section {
+    display: grid;
+    gap: var(--spacing-66);
+  }
+
+  .profile-section__intro {
+    max-width: 960px;
+    display: grid;
+    gap: var(--spacing-22);
+  }
+
+  .profile-section__title {
+    margin: 0;
+    font-family: var(--font-te-40);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-thin);
+    line-height: var(--leading-display);
+  }
+
+  .profile-section__intro p {
+    margin: 0;
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .profile-section__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-66);
+    position: relative;
+  }
+
+  .profile-section__list::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 50%;
+    width: 1px;
+    background: var(--color-steel);
+  }
+
+  .profile-section__rule {
+    width: 42px;
+    height: 1px;
+    background: var(--color-ink);
+  }
+
+  .profile-section__contact {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--spacing-33);
+    padding-block: var(--spacing-33);
+    border-top: 1px solid var(--color-steel);
+    border-bottom: 1px solid var(--color-steel);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .profile-section__contact p {
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .profile-section__contact a {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-15);
+    color: var(--color-electric-blue);
+  }
+
+  .profile-section__mark {
+    width: 54px;
+    height: 54px;
+    position: relative;
+    border: 1px solid var(--color-ink);
+  }
+
+  .profile-section__mark::before,
+  .profile-section__mark::after {
+    content: "";
+    position: absolute;
+    background: var(--color-ink);
+  }
+
+  .profile-section__mark::before {
+    left: 13px;
+    top: 0;
+    width: 1px;
+    height: 54px;
+    transform: rotate(45deg);
+    transform-origin: top center;
+  }
+
+  .profile-section__mark::after {
+    left: 27px;
+    top: 26px;
+    width: 1px;
+    height: 27px;
+  }
+
+  @media (max-width: 760px) {
+    .profile-section__list {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-44, 44px);
+    }
+
+    .profile-section__list::before {
+      display: none;
+    }
+
+    .profile-section__contact {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

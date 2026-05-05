@@ -1,0 +1,34 @@
+---
+import type { ProjectItem } from '@data/projects';
+import ProjectGridItem from './ProjectGridItem.astro';
+
+type Props = {
+  projects: ProjectItem[];
+};
+
+const { projects } = Astro.props;
+---
+
+<div class="project-grid" data-project-grid>
+  {projects.map((project, index) => <ProjectGridItem project={project} index={index} active={index === 0} />)}
+</div>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-33);
+  }
+
+  @media (min-width: 1160px) {
+    .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

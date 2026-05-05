@@ -1,0 +1,81 @@
+---
+import { site } from '@data/site';
+import { dictionary } from '@i18n/index';
+import { withBase } from '@utils/paths';
+
+type Props = {
+  currentPath: string;
+  variant?: 'desktop' | 'mobile' | 'footer';
+};
+
+const { currentPath, variant = 'desktop' } = Astro.props;
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<nav class={`primary-nav primary-nav--${variant}`} aria-label="primary">
+  {
+    site.nav.map((item) => (
+      <a class:list={['primary-nav__link', { 'is-active': isActive(item.href) }]} href={withBase(item.href)} aria-current={isActive(item.href) ? 'page' : undefined}>
+        <span data-lang="jp">{dictionary.jp.nav[item.key]}</span>
+        <span data-lang="en">{dictionary.en.nav[item.key]}</span>
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  .primary-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 5vw, 66px);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .primary-nav__link {
+    position: relative;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-ink);
+  }
+
+  .primary-nav__link:hover,
+  .primary-nav__link.is-active {
+    color: var(--color-electric-blue);
+  }
+
+  .primary-nav--mobile {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    font-size: var(--text-heading);
+    line-height: var(--leading-heading);
+  }
+
+  .primary-nav--mobile .primary-nav__link {
+    width: 100%;
+    min-height: 58px;
+    border-bottom: 1px solid var(--color-steel);
+  }
+
+  .primary-nav--footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .primary-nav--footer .primary-nav__link {
+    min-height: 28px;
+    color: var(--color-steel);
+  }
+
+  .primary-nav--footer .primary-nav__link:hover,
+  .primary-nav--footer .primary-nav__link.is-active {
+    color: var(--color-electric-blue);
+  }
+</style>
