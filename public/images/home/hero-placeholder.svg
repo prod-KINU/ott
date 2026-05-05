@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="KINU placeholder visual">
+  <rect width="1200" height="900" fill="#e5e5e5"/>
+  <rect x="120" y="120" width="960" height="660" fill="#f6f8f7" stroke="#b2b2b2" stroke-width="2"/>
+  <path d="M120 320h960M120 560h960M400 120v660M800 120v660" stroke="#e5e5e5" stroke-width="2"/>
+  <path d="M437 345h70M437 450h70M437 345l105 105M542 345v105M642 345v105M642 345l120 105M762 345v105" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
+  <text x="600" y="710" text-anchor="middle" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="300">media placeholder</text>
+</svg>

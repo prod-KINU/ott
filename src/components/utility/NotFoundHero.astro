@@ -1,0 +1,68 @@
+---
+import { media } from '@data/media';
+import { dictionary } from '@i18n/index';
+import { withBase } from '@utils/paths';
+---
+
+<section class="not-found page-frame page-section" aria-labelledby="not-found-title">
+  <img class="not-found__image" src={withBase(media.notFound.src)} alt={media.notFound.alt.jp} width="1000" height="700" data-alt-jp={media.notFound.alt.jp} data-alt-en={media.notFound.alt.en} />
+  <div class="not-found__body">
+    <h1 id="not-found-title" class="not-found__title">{dictionary.jp.notFound.title}</h1>
+    <p class="not-found__message" data-lang="jp">{dictionary.jp.notFound.message}</p>
+    <p class="not-found__message" data-lang="en">{dictionary.en.notFound.message}</p>
+    <a class="not-found__link" href={withBase('/')}>
+      <span data-lang="jp">{dictionary.jp.notFound.link}</span>
+      <span data-lang="en">{dictionary.en.notFound.link}</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .not-found {
+    min-height: calc(100svh - var(--header-height));
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.72fr);
+    gap: var(--spacing-66);
+    align-items: center;
+  }
+
+  .not-found__image {
+    width: 100%;
+    border: 1px solid var(--color-steel);
+  }
+
+  .not-found__body {
+    display: grid;
+    gap: var(--spacing-22);
+  }
+
+  .not-found__title {
+    margin: 0;
+    font-family: var(--font-te-40);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-thin);
+    line-height: var(--leading-display);
+  }
+
+  .not-found__message {
+    margin: 0;
+  }
+
+  .not-found__link {
+    width: fit-content;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-electric-blue);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  @media (max-width: 760px) {
+    .not-found {
+      min-height: auto;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-33);
+    }
+  }
+</style>

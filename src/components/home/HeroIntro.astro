@@ -1,0 +1,67 @@
+---
+import { dictionary } from '@i18n/index';
+import { withBase } from '@utils/paths';
+---
+
+<div class="hero-intro">
+  <p class="hero-intro__eyebrow text-caption" data-lang="jp">{dictionary.jp.home.eyebrow}</p>
+  <p class="hero-intro__eyebrow text-caption" data-lang="en">{dictionary.en.home.eyebrow}</p>
+  <h1 id="home-title" class="hero-intro__title">{dictionary.jp.home.title}</h1>
+  <p class="hero-intro__text" data-lang="jp">{dictionary.jp.home.intro}</p>
+  <p class="hero-intro__text" data-lang="en">{dictionary.en.home.intro}</p>
+  <a class="hero-intro__link" href={withBase('/projects')}>
+    <span class="hero-intro__line" aria-hidden="true"></span>
+    <span data-lang="jp">{dictionary.jp.home.cta}</span>
+    <span data-lang="en">{dictionary.en.home.cta}</span>
+  </a>
+</div>
+
+<style>
+  .hero-intro {
+    max-width: 520px;
+    display: grid;
+    gap: var(--spacing-22);
+  }
+
+  .hero-intro__eyebrow {
+    margin: 0;
+    color: var(--color-smoke);
+  }
+
+  .hero-intro__title {
+    margin: 0;
+    font-family: var(--font-te-40);
+    font-size: 76px;
+    font-weight: var(--font-weight-thin);
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .hero-intro__text {
+    margin: 0;
+    max-width: 31em;
+  }
+
+  .hero-intro__link {
+    width: fit-content;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-15);
+    color: var(--color-electric-blue);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+  }
+
+  .hero-intro__line {
+    width: 52px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  @media (max-width: 720px) {
+    .hero-intro__title {
+      font-size: 52px;
+    }
+  }
+</style>
