@@ -1,0 +1,208 @@
+---
+import BaseLayout from '@components/layout/BaseLayout.astro';
+import ProjectDetailMobileView from '@components/projects/ProjectDetailMobileView.astro';
+import ProjectDetailPanel from '@components/projects/ProjectDetailPanel.astro';
+import ProjectGrid from '@components/projects/ProjectGrid.astro';
+import { projects } from '@data/projects';
+import { site } from '@data/site';
+import { dictionary } from '@i18n/index';
+
+function categoryKey(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+const categories = Array.from(
+  projects.reduce((map, project) => {
+    const key = categoryKey(project.category.en);
+    if (!map.has(key)) {
+      map.set(key, {
+        key,
+        label: project.category
+      });
+    }
+    return map;
+  }, new Map<string, { key: string; label: { jp: string; en: string } }>())
+  .values()
+);
+---
+
+<BaseLayout title="projects" description={site.description.jp}>
+  <section class="projects-page page-frame page-section" aria-labelledby="projects-title" data-reveal>
+    <header class="projects-page__header">
+      <h1 id="projects-title" class="projects-page__title">
+        <span data-lang="jp">{dictionary.jp.projects.title}</span>
+        <span data-lang="en">{dictionary.en.projects.title}</span>
+      </h1>
+      <p class="projects-page__intro text-caption">
+        <span data-lang="jp">{dictionary.jp.projects.intro}</span>
+        <span data-lang="en">{dictionary.en.projects.intro}</span>
+      </p>
+      <span class="projects-page__rule" aria-hidden="true"></span>
+      <div class="projects-page__filters" aria-label={dictionary.jp.projects.filters.label}>
+        <button class="projects-page__filter is-active" type="button" data-project-filter="all" aria-pressed="true">
+          <span data-lang="jp">{dictionary.jp.projects.filters.all}</span>
+          <span data-lang="en">{dictionary.en.projects.filters.all}</span>
+        </button>
+        {
+          categories.map((category) => (
+            <button class="projects-page__filter" type="button" data-project-filter={category.key} aria-pressed="false">
+              <span data-lang="jp">{category.label.jp}</span>
+              <span data-lang="en">{category.label.en}</span>
+            </button>
+          ))
+        }
+      </div>
+    </header>
+    <div class="projects-page__body" data-projects-root data-first-project={projects[0]?.slug} data-project-page-size="6">
+      <div class="projects-page__listing">
+        <ProjectGrid projects={projects} />
+        <div class="projects-page__pagination" data-project-pagination>
+          <button class="projects-page__page-button" type="button" data-project-page-prev>
+            <span aria-hidden="true">←</span>
+            <span data-lang="jp">{dictionary.jp.projects.pagination.previous}</span>
+            <span data-lang="en">{dictionary.en.projects.pagination.previous}</span>
+          </button>
+          <span class="projects-page__page-status" data-project-page-status>1 / 1</span>
+          <button class="projects-page__page-button" type="button" data-project-page-next>
+            <span data-lang="jp">{dictionary.jp.projects.pagination.next}</span>
+            <span data-lang="en">{dictionary.en.projects.pagination.next}</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+      <div class="projects-page__desktop-detail">
+        <ProjectDetailPanel projects={projects} />
+      </div>
+      <ProjectDetailMobileView projects={projects} />
+    </div>
+  </section>
+  <script>
+    import '../scripts/projects.ts';
+  </script>
+</BaseLayout>
+
+<style>
+  .projects-page {
+    display: grid;
+    gap: 100px;
+    padding-top: 102px;
+  }
+
+  .projects-page__header {
+    max-width: 780px;
+    display: grid;
+    gap: var(--spacing-15);
+  }
+
+  .projects-page__title,
+  .projects-page__intro {
+    margin: 0;
+  }
+
+  .projects-page__title {
+    font-family: var(--font-te-40);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-thin);
+    line-height: var(--leading-display);
+  }
+
+  .projects-page__intro {
+    color: var(--color-smoke);
+  }
+
+  .projects-page__body {
+    display: grid;
+    grid-template-columns: minmax(500px, 574px) minmax(310px, 1fr);
+    gap: 47px;
+    align-items: start;
+  }
+
+  .projects-page__listing {
+    display: grid;
+    gap: var(--spacing-33);
+  }
+
+  .projects-page__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--spacing-22);
+  }
+
+  .projects-page__filter {
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--color-smoke);
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-ink);
+    cursor: pointer;
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .projects-page__filter:hover,
+  .projects-page__filter.is-active {
+    border-color: var(--color-electric-blue);
+    color: var(--color-electric-blue);
+  }
+
+  .projects-page__pagination {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-22);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+  }
+
+  .projects-page__page-button {
+    min-height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-15);
+    border: 0;
+    background: transparent;
+    color: var(--color-electric-blue);
+    cursor: pointer;
+  }
+
+  .projects-page__page-button:disabled {
+    color: var(--color-smoke);
+    cursor: default;
+  }
+
+  .projects-page__page-status {
+    color: var(--color-ink);
+  }
+
+  .projects-page__desktop-detail {
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-22));
+    padding-left: 43px;
+    border-left: 1px solid var(--color-steel);
+  }
+
+  .projects-page__rule {
+    width: 42px;
+    height: 1px;
+    background: var(--color-ink);
+  }
+
+  @media (max-width: 860px) {
+    .projects-page__body {
+      grid-template-columns: 1fr;
+    }
+
+    .projects-page__desktop-detail {
+      display: none;
+    }
+
+    .projects-page {
+      gap: var(--spacing-66);
+      padding-top: var(--spacing-66);
+    }
+  }
+</style>

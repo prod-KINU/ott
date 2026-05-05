@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="oike profile placeholder">
+  <rect width="900" height="900" fill="#e5e5e5"/>
+  <rect x="120" y="130" width="660" height="640" fill="#f6f8f7" stroke="#b2b2b2" stroke-width="2"/>
+  <circle cx="450" cy="340" r="108" fill="none" stroke="#000" stroke-width="3"/>
+  <path d="M260 690c46-124 334-124 380 0" fill="none" stroke="#000" stroke-width="3"/>
+  <text x="450" y="820" text-anchor="middle" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="300">oike</text>
+</svg>
