@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="teramachi profile placeholder">
-  <rect width="900" height="900" fill="#e5e5e5"/>
-  <rect x="120" y="130" width="660" height="640" fill="#f6f8f7" stroke="#b2b2b2" stroke-width="2"/>
-  <path d="M330 230h240v210H330zM270 690c42-118 318-118 360 0" fill="none" stroke="#000" stroke-width="3"/>
-  <path d="M365 335h170" stroke="#b2b2b2" stroke-width="3"/>
-  <text x="450" y="820" text-anchor="middle" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="300">teramachi</text>
-</svg>

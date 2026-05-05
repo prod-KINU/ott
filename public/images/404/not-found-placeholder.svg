@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-label="404 placeholder image">
-  <rect width="1000" height="700" fill="#e5e5e5"/>
-  <rect x="90" y="90" width="820" height="520" fill="#f6f8f7" stroke="#b2b2b2" stroke-width="2"/>
-  <text x="500" y="380" text-anchor="middle" fill="#000" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="300">404</text>
-</svg>

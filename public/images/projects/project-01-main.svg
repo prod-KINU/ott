@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" role="img" aria-label="Project 01 main image">
-  <rect width="1400" height="950" fill="#e5e5e5"/>
-  <rect x="120" y="110" width="1160" height="730" fill="#f6f8f7" stroke="#b2b2b2" stroke-width="2"/>
-  <path d="M230 330h940M230 475h940M230 620h560" stroke="#000" stroke-width="7"/>
-  <text x="230" y="760" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="300">project image placeholder</text>
-</svg>
