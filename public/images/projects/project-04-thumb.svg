@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-label="Project 04 thumbnail">
-  <rect width="700" height="700" fill="#f6f8f7"/>
-  <rect x="80" y="80" width="240" height="540" fill="#0f0e12"/>
-  <rect x="310" y="300" width="250" height="320" fill="#b2b2b2"/>
-  <path d="M80 620h480M320 80v540" stroke="#e5e5e5" stroke-width="4"/>
-</svg>
