@@ -7,7 +7,7 @@ export const site = {
     en: 'Creative team : KINU'
   },
   logo: {
-    dark: '/images/logo/kinu-logo.svg',
+    dark: '/images/logo/mainlogo.png',
     light: '/images/logo/kinu-logo-light.svg'
   },
   contact: {

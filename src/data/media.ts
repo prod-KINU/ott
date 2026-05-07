@@ -1,10 +1,10 @@
 export const media = {
   homeHero: {
     type: 'image',
-    src: '/images/home/hero-placeholder.svg',
+    src: '/images/home/hero.png',
     alt: {
-      jp: 'KINUのメインビジュアルのプレースホルダー',
-      en: 'Placeholder main visual for KINU'
+      jp: 'KINUのメインビジュアル',
+      en: 'Main visual for KINU'
     }
   },
   loading: [

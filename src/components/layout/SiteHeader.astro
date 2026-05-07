@@ -11,7 +11,7 @@ const currentPath = withoutBase(Astro.url.pathname);
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-header__logo" href={withBase('/')} aria-label="KINU home">
-      <img src={withBase(site.logo.dark)} alt="KINU" width="150" height="40" />
+      <img src={withBase(site.logo.dark)} alt="KINU" width="48" height="48" />
     </a>
     <div class="site-header__nav">
       <PrimaryNav currentPath={currentPath} />
@@ -45,13 +45,14 @@ const currentPath = withoutBase(Astro.url.pathname);
   }
 
   .site-header__logo {
-    width: 112px;
+    width: 48px;
     display: inline-flex;
   }
 
   .site-header__logo img {
-    width: 112px;
-    height: auto;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
   }
 
   .site-header__nav {

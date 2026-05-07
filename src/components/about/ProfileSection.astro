@@ -1,5 +1,6 @@
 ---
 import { profiles } from '@data/profiles';
+import { site } from '@data/site';
 import { dictionary } from '@i18n/index';
 import ProfileCard from './ProfileCard.astro';
 ---
@@ -21,7 +22,7 @@ import ProfileCard from './ProfileCard.astro';
     <span class="profile-section__mark" aria-hidden="true"></span>
     <p data-lang="jp">{dictionary.jp.about.collaboration}</p>
     <p data-lang="en">{dictionary.en.about.collaboration}</p>
-    <a href="mailto:contact@example.com">
+    <a href={`mailto:${site.contact.email}`}>
       <span data-lang="jp">{dictionary.jp.about.contact}</span>
       <span data-lang="en">{dictionary.en.about.contact}</span>
       <span aria-hidden="true">→</span>
@@ -70,6 +71,18 @@ import ProfileCard from './ProfileCard.astro';
     background: var(--color-steel);
   }
 
+  @media (min-width: 761px) {
+    .profile-section__list :global(.profile-card:nth-child(2)) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .profile-section__list :global(.profile-card:nth-child(3)) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
   .profile-section__rule {
     width: 42px;
     height: 1px;
@@ -91,6 +104,7 @@ import ProfileCard from './ProfileCard.astro';
   .profile-section__contact p {
     margin: 0;
     max-width: 520px;
+    white-space: pre-line;
   }
 
   .profile-section__contact a {

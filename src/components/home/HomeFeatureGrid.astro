@@ -1,5 +1,6 @@
 ---
 import { dictionary } from '@i18n/index';
+import { site } from '@data/site';
 import { withBase } from '@utils/paths';
 
 const panels = [
@@ -20,7 +21,7 @@ const panels = [
   {
     number: '03',
     icon: 'mail',
-    href: 'mailto:contact@example.com',
+    href: `mailto:${site.contact.email}`,
     jp: dictionary.jp.home.panels.contact,
     en: dictionary.en.home.panels.contact
   }

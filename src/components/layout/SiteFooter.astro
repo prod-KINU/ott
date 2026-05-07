@@ -20,8 +20,12 @@ const currentPath = withoutBase(Astro.url.pathname);
       <PrimaryNav currentPath={currentPath} variant="footer" />
     </div>
     <address class="site-footer__contact">
-      <a class="site-footer__contact-link site-footer__contact-link--mail" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+      <a class="site-footer__contact-link site-footer__contact-link--mail" href={`mailto:${site.contact.email}`}>
+        <img class="site-footer__contact-icon" src={withBase('/images/icons/mail.svg')} alt="" width="22" height="18" aria-hidden="true" />
+        {site.contact.email}
+      </a>
       <a class="site-footer__contact-link site-footer__contact-link--social" href={site.contact.instagram} target="_blank" rel="noreferrer">
+        <img class="site-footer__contact-icon" src={withBase('/images/icons/instagram-logo.svg')} alt="" width="22" height="22" aria-hidden="true" />
         <span data-lang="jp">{dictionary.jp.footer.social}</span>
         <span data-lang="en">{dictionary.en.footer.social}</span>
       </a>
@@ -89,17 +93,11 @@ const currentPath = withoutBase(Astro.url.pathname);
     gap: var(--spacing-15);
   }
 
-  .site-footer__contact-link::before {
-    content: "";
+  .site-footer__contact-icon {
     width: 22px;
-    height: 18px;
-    display: inline-block;
-    border: 1px solid currentColor;
-  }
-
-  .site-footer__contact-link--social::before {
-    width: 22px;
-    height: 22px;
+    height: auto;
+    flex: 0 0 auto;
+    object-fit: contain;
   }
 
   .site-footer a:hover {

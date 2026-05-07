@@ -15,7 +15,7 @@ export const en = {
   home: {
     eyebrow: 'creative team',
     title: 'KINU',
-    intro: 'portfolio of oike & teramachi',
+    intro: 'portfolio of oike, teramachi & kamo',
     cta: 'view projects',
     panels: {
       works: {
@@ -25,7 +25,7 @@ export const en = {
       },
       team: {
         title: 'about the team',
-        text: 'We are a small creative team working across video, design, and music. Moving between disciplines, we shape each project in the way that suits it best.',
+        text: 'We are a creative team led by oike, teramachi, and kamo, working mainly across video, design, and music.',
         link: 'learn more'
       },
       contact: {
@@ -37,8 +37,8 @@ export const en = {
   },
   about: {
     title: 'about us',
-    intro: 'KINU is a creative studio of oike and teramachi, exploring form, function, and feeling.',
-    collaboration: 'Available for video production, flyer design, logo design, and music production. Please feel free to reach out.',
+    intro: 'KINU is a creative unit by oike, teramachi, and kamo, exploring form, function, and feeling.',
+    collaboration: 'We accept inquiries for video production, flyers, logos, and music production.\nPlease feel free to reach out.',
     contact: 'get in touch'
   },
   projects: {

@@ -15,7 +15,7 @@ export const jp = {
   home: {
     eyebrow: 'creative team',
     title: 'KINU',
-    intro: 'portfolio of oike & teramachi',
+    intro: 'portfolio of oike, teramachi & kamo',
     cta: 'view projects',
     panels: {
       works: {
@@ -25,7 +25,7 @@ export const jp = {
       },
       team: {
         title: 'about the team',
-        text: 'oike、teramachiによる映像、デザイン、音楽を中心に活動する小さな制作チームです。',
+        text: 'oike、teramachi、kamoによる映像、デザイン、音楽を中心に活動する制作チームです。',
         link: 'learn more'
       },
       contact: {
@@ -37,8 +37,8 @@ export const jp = {
   },
   about: {
     title: 'about us',
-    intro: 'KINUは、oikeとteramachiによるクリエイティブユニットであり、形、機能、そして感覚を探求しています。',
-    collaboration: '映像・フライヤー・ロゴ・楽曲制作のご相談を承っております。お気軽にご連絡ください。',
+    intro: 'KINUは、oike・teramachi・kamoによるクリエイティブユニットであり、形、機能、そして感覚を探求しています。',
+    collaboration: '映像・フライヤー・ロゴ・楽曲制作のご相談を承っております。\nお気軽にご連絡ください。',
     contact: 'get in touch'
   },
   projects: {
