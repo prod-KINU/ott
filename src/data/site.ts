@@ -11,8 +11,8 @@ export const site = {
     light: '/images/logo/kinu-logo-light.svg'
   },
   contact: {
-    email: 'hello@example.com',
-    instagram: 'https://www.instagram.com/'
+    email: 'prod.kinu@gmail.com',
+    instagram: 'https://www.instagram.com/prod.kinu?igsh=d3V3eGhsbTl3NHB5'
   },
   nav: [
     { href: '/', key: 'home' },
