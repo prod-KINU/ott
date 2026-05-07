@@ -18,7 +18,9 @@ if (root) {
   const nextButton = document.querySelector<HTMLButtonElement>('[data-project-page-next]');
   const pageStatus = document.querySelector<HTMLElement>('[data-project-page-status]');
   const validSlugs = new Set(triggers.map((trigger) => trigger.dataset.projectTrigger).filter(Boolean));
-  const validCategories = new Set(['all', ...triggers.map((trigger) => trigger.dataset.projectCategory).filter(Boolean)]);
+  const triggerCategories = (trigger: HTMLElement) => (trigger.dataset.projectCategories ?? '').split(/\s+/).filter(Boolean);
+  const triggerHasCategory = (trigger: HTMLElement, category: string) => triggerCategories(trigger).includes(category);
+  const validCategories = new Set(['all', ...triggers.flatMap((trigger) => triggerCategories(trigger))]);
 
   const getQuerySlug = () => {
     const slug = new URLSearchParams(window.location.search).get(PROJECT_PARAM);
@@ -40,7 +42,7 @@ if (root) {
   const filteredTriggers = (category: string) => (
     category === 'all'
       ? triggers
-      : triggers.filter((trigger) => trigger.dataset.projectCategory === category)
+      : triggers.filter((trigger) => triggerHasCategory(trigger, category))
   );
 
   const pageCountFor = (category: string) => Math.max(1, Math.ceil(filteredTriggers(category).length / pageSize));
@@ -108,7 +110,7 @@ if (root) {
     const visible = new Set(pageTriggers(category, page));
 
     triggers.forEach((trigger) => {
-      const inCategory = category === 'all' || trigger.dataset.projectCategory === category;
+      const inCategory = category === 'all' || triggerHasCategory(trigger, category);
       trigger.hidden = !inCategory || !visible.has(trigger);
     });
 
@@ -160,7 +162,7 @@ if (root) {
 
     if (querySlug) {
       const trigger = triggers.find((item) => item.dataset.projectTrigger === querySlug);
-      if (trigger && category !== 'all' && trigger.dataset.projectCategory !== category) {
+      if (trigger && category !== 'all' && !triggerHasCategory(trigger, category)) {
         category = 'all';
       }
       page = pageForSlug(querySlug, category);

@@ -7,6 +7,10 @@ type Props = {
 };
 
 const { project } = Astro.props;
+const categoryText = {
+  jp: project.category.map((category) => category.label.jp).join(', '),
+  en: project.category.map((category) => category.label.en).join(', ')
+};
 ---
 
 <dl class="project-meta">
@@ -44,8 +48,8 @@ const { project } = Astro.props;
       <span data-lang="en">{dictionary.en.projects.meta.category}</span>
     </dt>
     <dd>
-      <span data-lang="jp">{project.category.jp}</span>
-      <span data-lang="en">{project.category.en}</span>
+      <span data-lang="jp">{categoryText.jp}</span>
+      <span data-lang="en">{categoryText.en}</span>
     </dd>
   </div>
 </dl>

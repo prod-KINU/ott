@@ -7,14 +7,10 @@ type Props = {
 };
 
 const { projects } = Astro.props;
-
-function categoryKey(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
 ---
 
 <div class="project-grid" data-project-grid>
-  {projects.map((project, index) => <ProjectGridItem project={project} index={index} categoryKey={categoryKey(project.category.en)} active={index === 0} />)}
+  {projects.map((project, index) => <ProjectGridItem project={project} index={index} active={index === 0} />)}
 </div>
 
 <style>

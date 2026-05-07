@@ -5,15 +5,15 @@ import { withBase } from '@utils/paths';
 type Props = {
   project: ProjectItem;
   index: number;
-  categoryKey: string;
   active?: boolean;
 };
 
-const { project, index, categoryKey, active = false } = Astro.props;
+const { project, index, active = false } = Astro.props;
 const number = String(index + 1).padStart(2, '0');
+const categoryKeys = project.category.map((category) => category.key).join(' ');
 ---
 
-<a class:list={['project-grid-item', { 'is-active': active }]} href={withBase(`/projects?project=${project.slug}`)} data-project-trigger={project.slug} data-project-category={categoryKey} data-project-index={index} aria-current={active ? 'true' : undefined}>
+<a class:list={['project-grid-item', { 'is-active': active }]} href={withBase(`/projects?project=${project.slug}`)} data-project-trigger={project.slug} data-project-categories={categoryKeys} data-project-index={index} aria-current={active ? 'true' : undefined}>
   <img class="project-grid-item__image" src={withBase(project.thumbnail)} alt={project.alt.jp} width="700" height="700" data-alt-jp={project.alt.jp} data-alt-en={project.alt.en} />
   <span class="project-grid-item__meta text-caption">{number}</span>
   <span class="project-grid-item__title">

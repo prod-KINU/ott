@@ -3,27 +3,9 @@ import BaseLayout from '@components/layout/BaseLayout.astro';
 import ProjectDetailMobileView from '@components/projects/ProjectDetailMobileView.astro';
 import ProjectDetailPanel from '@components/projects/ProjectDetailPanel.astro';
 import ProjectGrid from '@components/projects/ProjectGrid.astro';
-import { projects } from '@data/projects';
+import { projectCategories, projects } from '@data/projects';
 import { site } from '@data/site';
 import { dictionary } from '@i18n/index';
-
-function categoryKey(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-const categories = Array.from(
-  projects.reduce((map, project) => {
-    const key = categoryKey(project.category.en);
-    if (!map.has(key)) {
-      map.set(key, {
-        key,
-        label: project.category
-      });
-    }
-    return map;
-  }, new Map<string, { key: string; label: { jp: string; en: string } }>())
-  .values()
-);
 ---
 
 <BaseLayout title="projects" description={site.description.jp}>
@@ -44,7 +26,7 @@ const categories = Array.from(
           <span data-lang="en">{dictionary.en.projects.filters.all}</span>
         </button>
         {
-          categories.map((category) => (
+          projectCategories.map((category) => (
             <button class="projects-page__filter" type="button" data-project-filter={category.key} aria-pressed="false">
               <span data-lang="jp">{category.label.jp}</span>
               <span data-lang="en">{category.label.en}</span>
