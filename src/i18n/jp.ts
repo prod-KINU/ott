@@ -25,7 +25,7 @@ export const jp = {
       },
       team: {
         title: 'about the team',
-        text: 'oike、teramachi、kamoによる映像、デザイン、音楽を中心に活動する制作チームです。',
+        text: 'oike、teramachi、kamoについて。',
         link: 'learn more'
       },
       contact: {
