@@ -13,7 +13,7 @@ export const jp = {
     homeLink: 'home'
   },
   home: {
-    eyebrow: 'creative team',
+    eyebrow: 'Yes! We Have No Bananas',
     title: 'KINU',
     intro: 'portfolio of oike, teramachi & kamo',
     cta: 'view projects',
