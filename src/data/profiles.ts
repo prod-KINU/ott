@@ -43,7 +43,7 @@ export const profiles: ProfileItem[] = [
       jp: '1995年生まれ。アメリカ ホワイトプレーンズ出身。\n立命館大学卒業、大阪工業大学大学院修了。大阪在住。\nイラスト、画像編集、楽曲制作を担当しています。\n視覚表現と構成設計を軸に、作品の印象や情報の流れを整えます。',
       en: 'Born in 1995 in White Plains, United States.\nGraduated from Ritsumeikan University and completed graduate studies at Osaka Institute of Technology. Based in Osaka.\n\nResponsible for illustration, image editing, and music production.\nWith a focus on visual expression and structural design, organizes the tone of each work and the flow of information.'
     },
-    expertise: ['Illustrator', 'Photoshop', 'Python', 'JavaScript', 'AbletonLive']
+    expertise: ['Illustrator', 'Photoshop', 'PremierePro', 'Python', 'AbletonLive']
   },
   {
     slug: 'kamo',
