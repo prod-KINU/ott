@@ -62,7 +62,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Logo Design', 'Animation', 'Direction'),
     description: {
       jp: '川原くんのクイズさん（シーズン1）のロゴデザイン、及びOP映像を担当しました。',
-      en: 'We created the logo design and opening video for Kawahara-kun no Quiz-san (Season 1).'
+      en: 'We created the logo design and opening video for "Kawahara-kun no Quiz-san (Season 1)".'
     },
     thumbnail: '/images/projects/Quiz_pt1.png',
     mainImage: '/images/projects/Quiz_pt1.png',
@@ -83,7 +83,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Logo Design', 'Animation', 'Composition', 'Direction'),
     description: {
       jp: '川原くんのクイズさん（シーズン2_FANY版）のロゴデザイン、OP映像、及びOP曲を担当しました。',
-      en: 'We created the logo design, opening video, and opening theme for Kawahara-kun no Quiz-san (Season 2, FANY Version).'
+      en: 'We created the logo design, opening video, and opening theme for "Kawahara-kun no Quiz-san (Season 2, FANY Version)".'
     },
     thumbnail: '/images/projects/Quiz_pt2_streaming.png',
     mainImage: '/images/projects/Quiz_pt2_streaming.png',
@@ -104,7 +104,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Logo Design', 'Animation', 'Direction'),
     description: {
       jp: '川原くんのクイズさん（シーズン2_放送版）のロゴデザイン、及びOP映像を担当しました。',
-      en: 'We created the logo design and opening video for Kawahara-kun no Quiz-san (Season 2, Broadcast Version).'
+      en: 'We created the logo design and opening video for "Kawahara-kun no Quiz-san (Season 2, Broadcast Version)".'
     },
     thumbnail: '/images/projects/Quiz_pt2_broadcast.png',
     mainImage: '/images/projects/Quiz_pt2_broadcast.png',
@@ -125,7 +125,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Animation', 'Coding', 'Composition', 'Direction'),
     description: {
       jp: 'くっきー！川原の漫才育成の道のOP映像を担当しました。',
-      en: 'We created the opening video for Cookie! Kawahara: The Road to Manzai Training.'
+      en: 'We created the opening video for "Cookie! Kawahara: The Road to Manzai nurturing Ⅰ".'
     },
     thumbnail: '/images/projects/the_way_pt1.png',
     mainImage: '/images/projects/the_way_pt1.png',
@@ -146,7 +146,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Animation', 'Coding', 'Composition', 'Direction'),
     description: {
       jp: 'くっきー！川原の漫才育成の道のOP映像を担当しました。',
-      en: 'We created the opening video for Cookie! Kawahara: The Road to Manzai Training.'
+      en: 'We created the opening video for "Cookie! Kawahara: The Road to Manzai nurturing Ⅱ".'
     },
     thumbnail: '/images/projects/the_way_pt2.png',
     mainImage: '/images/projects/the_way_pt2.png',
@@ -167,7 +167,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Animation', 'Coding', 'Composition', 'Direction'),
     description: {
       jp: 'くっきー！川原の漫才育成の道のOP映像を担当しました。',
-      en: 'We created the opening video for Cookie! Kawahara: The Road to Manzai Training.'
+      en: 'We created the opening video for "Cookie! Kawahara: The Road to Manzai nurturing Ⅲ".'
     },
     thumbnail: '/images/projects/the_way_pt3.png',
     mainImage: '/images/projects/the_way_pt3.png',
@@ -188,7 +188,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Animation', '3D', 'Coding', 'Composition', 'Direction'),
     description: {
       jp: '川原と米良のOP映像、及びOP曲を担当しました。',
-      en: 'We created the opening video and opening theme for Kawahara and Mera.'
+      en: 'We created the opening video and opening theme for "Kawahara and Mera".'
     },
     thumbnail: '/images/projects/versus.png',
     mainImage: '/images/projects/versus.png',
@@ -209,7 +209,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Animation', 'Composition', 'Direction'),
     description: {
       jp: 'お笑いの向こう側の中にある（昼公演）のOP映像、及びOP曲を担当しました。',
-      en: 'We created the opening video and opening theme for Inside the Other Side of Comedy (Day Performance).'
+      en: 'We created the opening video and opening theme for "Inside the Other Side of Comedy" (Day Performance).'
     },
     thumbnail: '/images/projects/day.png',
     mainImage: '/images/projects/day.png',
@@ -230,7 +230,7 @@ export const projects: ProjectItem[] = [
     category: categories('Illustration', 'Animation', 'Composition', 'Direction'),
     description: {
       jp: 'お笑いの向こう側の中にある（夜公演）のOP映像、及びOP曲を担当しました。',
-      en: 'We created the opening video and opening theme for Inside the Other Side of Comedy (Night Performance).'
+      en: 'We created the opening video and opening theme for "Inside the Other Side of Comedy" (Night Performance).'
     },
     thumbnail: '/images/projects/night.png',
     mainImage: '/images/projects/night.png',
@@ -251,7 +251,7 @@ export const projects: ProjectItem[] = [
     category: categories('Logo Design', 'Animation'),
     description: {
       jp: 'NEWSクライシスのロゴデザイン、及びモーショングラフィックを担当しました。',
-      en: 'We created the logo design and motion graphics for NEWS Crisis.'
+      en: 'We created the logo design and motion graphics for "NEWS Crisis".'
     },
     thumbnail: '/images/projects/crisis.png',
     mainImage: '/images/projects/crisis.png',
@@ -267,12 +267,12 @@ export const projects: ProjectItem[] = [
       en: 'Kawahara Channel Opening'
     },
     date: '2026',
-    client: 'KINU',
+    client: '合同会社MorMotNo',
     medium: defaultMedium,
     category: categories('Animation', 'Composition', 'Direction'),
     description: {
-      jp: '仮の作品説明です。チャンネルの入り口となる映像として、テンポと印象を整えた制作実績です。',
-      en: 'Temporary project copy. This opening video organizes pacing and visual tone as the entrance to the channel.'
+      jp: '川原チャンネルのOPを担当しました。'
+      en: 'We created the opening video and opening theme for Kawahara Channel.'
     },
     thumbnail: '/images/projects/the_opening.png',
     mainImage: '/images/projects/the_opening.png',
